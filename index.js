@@ -8,8 +8,20 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
-
+const createDate = (dates, data) => {
+  let list = [];
+  if (data !== undefined) {
+    for (let i = 1; i <= dates.length; i++) {
+      list.push(Date.parse(dates[i]));
+    }
+    return list[data].toString().slice(0, -3);
+  } else {
+    for (let i = 1; i < dates.length; i++) {
+      list.push(Date.parse(dates[i]).toString().slice(0, -3));
+    }
+    return list.sort().join("-");
+  }
+};
 // ! JANGAN DIMODIFIKASI
 (() => {
   // IIFE
